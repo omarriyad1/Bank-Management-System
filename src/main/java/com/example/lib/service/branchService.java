@@ -2,6 +2,7 @@ package com.example.lib.service;
 
 import com.example.lib.dto.BranchDto;
 import com.example.lib.model.Branch;
+import com.example.lib.model.User;
 import com.example.lib.repository.BranchRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,6 @@ public class branchService {
     private BranchRepo branchRepository ;
     public Branch createBranch(BranchDto branchDto) {
         Branch branch1 = new Branch();
-
-//        private String branchName;
-//        private String branchCode;
-//        private String address;
         branchDto.setBranchName(branchDto.getBranchName());
         if(branchDto.getBranchCode() !=null)
         {
@@ -32,6 +29,12 @@ public class branchService {
     }
     public List<Branch> getAllBranches() {
      return branchRepository.findAll();
+    }
+//    public List<User> getBranchUsers(String branchCode) {
+//        return branchRepository.existsBranchByBranchCode(branchCode);
+//    }
+    public Branch getBranch(String branchCode) {
+        return branchRepository.findBranchByBranchCodeEquals(branchCode);
     }
 
 }

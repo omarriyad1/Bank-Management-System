@@ -26,11 +26,13 @@ public class User {
     private String email;
     private String address;
 
+
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     @JsonBackReference
     private Set<Account> accounts;
 
     @ManyToOne
-    @JoinColumn(name = "branch_id")
+    @JoinColumn(name = "branch_code")
     private Branch branch;
 }

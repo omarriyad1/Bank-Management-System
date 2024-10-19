@@ -20,5 +20,5 @@ public class AccountDto {
     @NotBlank(message = "AccountType is required")
     private String accountType;
     @NotNull
-    private int userId;
+    private Long userId;
 }

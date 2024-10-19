@@ -21,9 +21,8 @@ public class TransactionDto {
     private double amount;
     private Timestamp timestamp;
     @NotNull
-    private int source_userId;
-    @NotNull
-    private int target_userId;
+    private Long account_Id;
+
 
 
 

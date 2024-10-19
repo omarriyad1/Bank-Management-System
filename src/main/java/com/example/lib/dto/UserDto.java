@@ -15,8 +15,6 @@ public class UserDto {
     @NotBlank(message="address name is required")
     private String address;
     @NotNull
-    private int accountId;
-    @NotNull
-    private int branchId;
+    private String branchCode;
 
 }

@@ -2,6 +2,7 @@ package com.example.lib.controller;
 
 import com.example.lib.dto.BranchDto;
 import com.example.lib.model.Branch;
+import com.example.lib.model.User;
 import com.example.lib.service.branchService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api1")
 public class branchController {
 
     @Autowired
@@ -36,4 +37,14 @@ public class branchController {
         }
         return branchServicee.getAllBranches();
     }
+    @GetMapping("/getBranchByCode")
+    @ResponseBody
+    public Branch getBranchByCode(@RequestParam String code) {
+        return branchServicee.getBranch(code);
+    }
+//    @GetMapping("/getBranchUsers")
+//    @ResponseBody
+//    public List<User> getBranchUsrs(@RequestParam String code) {
+//        return branchServicee.getBranchUsers(code);
+//    }
 }
